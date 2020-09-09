@@ -5,7 +5,6 @@
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
-    pointer-events: none;
 }
 
 body {
@@ -19,13 +18,18 @@ body {
 #clock h2 {
     position: relative;
     display: block;
-    color: #fff;
+    color: #222;
     text-align: center;
     margin: 10px 0;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-size: 2em;
+    cursor: pointer;
+}
+
+#clock h2 span {
+    transition: 0.5s;
 }
 
 #clock #time {
@@ -80,3 +84,11 @@ body {
     background: #ec0062;
 }
 
+#clock h2:hover span {
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #fff,
+                 0 0 40px #fff,
+                 0 0 80px #fff,
+                 0 0 120px #fff;
+}

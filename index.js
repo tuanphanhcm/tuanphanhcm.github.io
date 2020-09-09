@@ -4,7 +4,7 @@ function clock(){
     var minutes = document.getElementById('minutes');
     var seconds = document.getElementById('seconds');
 
-    var publishDate = new Date("Sep 12, 2020 22:30:30").getTime();
+    var publishDate = new Date("Sep 30, 2020 22:30:30").getTime();
     var now = new Date().getTime();
 
     var remainingTime = publishDate - now;
