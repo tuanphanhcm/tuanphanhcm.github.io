@@ -84,7 +84,7 @@ body {
     background: #ec0062;
 }
 
-#clock h2:hover span {
+#clock h2 span {
     color: #fff;
     text-shadow: 0 0 10px #fff,
                  0 0 20px #fff,
