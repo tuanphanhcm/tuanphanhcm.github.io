@@ -4,10 +4,10 @@ function clock() {
   var minutes = document.getElementById("minutes");
   var seconds = document.getElementById("seconds");
 
-  var startDate = new Date("May 17, 2021 00:00:00").getTime();
+  var startDate = new Date("August 12, 2022 00:00:00").getTime();
   var now = new Date().getTime();
 
-  var workFromHomeTime = now - startDate;
+  var workFromHomeTime = startDate - now;
 
   var d = Math.floor(workFromHomeTime / (1000 * 60 * 60 * 24));
   var h = Math.floor(
