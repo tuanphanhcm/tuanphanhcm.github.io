@@ -26,7 +26,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.4em;
   font-size: 4em;
-  cursor: pointer;
 }
 
 #clock h2 span {
