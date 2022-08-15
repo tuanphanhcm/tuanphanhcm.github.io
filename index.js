@@ -4,7 +4,7 @@ function clock() {
   var minutes = document.getElementById("minutes");
   var seconds = document.getElementById("seconds");
 
-  var startDate = new Date("August 12, 2022 19:55:00").getTime();
+  var startDate = new Date("August 26, 2022 19:55:00").getTime();
   var now = new Date().getTime();
 
   var workFromHomeTime = startDate - now;
