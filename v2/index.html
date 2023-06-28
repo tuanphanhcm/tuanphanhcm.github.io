@@ -1,0 +1,1320 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+	height: 100%;
+}
+body {
+    height: 100%;
+	display: flex;
+    text-align: center;
+    font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+	background: radial-gradient(#f1f1f1 0%, #1a2238 50%);
+	 background: #1a2238;
+	 height: 100vh;
+}
+
+#timer {  
+  font-size: 8em;
+  font-weight: 100;
+
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+
+#timer div {
+    display: inline-block;
+    min-width: 200px;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+  }
+  
+  
+#timer div span {
+      color: #B1CDF1;
+      display: block;
+      font-size: .35em;
+      font-weight: 400;
+	  background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+.container {
+	width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c {
+    position: absolute;
+    z-index: 9999999;
+	}
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+ @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+ .animation {
+	 box-shadow: 0 0 10rem 0 #000;
+}
+ body {
+	 box-shadow: 0 0 10rem 0 #000 inset;
+}
+ html, body {
+	 width: 100%;
+	 height: 100%;
+}
+ body {
+	 box-sizing: border-box;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 padding-bottom: 3rem;
+	 background-color: #1d1f20;
+	 color: #fff;
+	 font-family: 'Josefin Sans', sans-serif;
+	 font-size: 10px;
+	 font-weight: 100;
+	 box-shadow: 0 0 10rem 0 #000 inset;
+}
+
+ .animation {
+	 position: relative;
+	 overflow: hidden;
+	 width: 100%;
+	 height: 40rem;
+	 max-width: 80rem;
+	 background-color: #fff;
+	 border-radius: 10rem;
+	 animation: 24s linear infinite skyDay;
+}
+ .animation:after {
+	 position: absolute;
+	 z-index: 0;
+	 top: 0;
+	 left: 0;
+	 content: '';
+	 display: block;
+	 width: 100%;
+	 height: 100%;
+	 box-shadow: 0 7rem 30rem -4rem #5aacdc inset;
+}
+ .animation [class^="animation__"], .animation [class*=" animation__"] {
+	 position: absolute;
+}
+ .animation__plane {
+	 position: absolute;
+	 z-index: 1;
+	 top: calc(70% - (62px/2));
+	 left: calc(45% - (272px/2));
+	 width: 17rem;
+	 height: 6.2rem;
+	 transition: all 3s;
+	 animation: 2s ease-in-out takeOff, 3s ease-in-out infinite alternate flight 2s;
+	 //3s ease-in-out infinite alternate flight 2s
+}
+.animation__plane:after {
+	content: '';
+	display: block;
+	width: 4px;
+	height: 2px;
+	border-radius: 8px;
+	background: #0000ff;
+}
+
+ .animation__plane--shadow {
+	 bottom: 1rem;
+	 left: calc(54% - (8rem/2));
+	 width: 8rem;
+	 height: 1rem;
+	 border-radius: 50%;
+	 background-color: rgba(0, 0, 0, 0.15);
+	 animation: 2s ease-in-out takeOffShadow, 5s ease-in-out infinite alternate flightShadow 2s;
+}
+ .animation__cloud--front {
+	 z-index: 2;
+	 top: 50%;
+	 left: 20%;
+	 width: 8.5rem;
+	 height: 3rem;
+	 fill: #cee4e7;
+	 animation: 4s linear infinite cloudFront;
+}
+ .animation__cloud--middle {
+	 top: 22%;
+	 left: 75%;
+	 width: 6rem;
+	 height: 3rem;
+	 fill: #cee4e7;
+	 animation: 5s linear infinite cloudMiddle;
+}
+ .animation__cloud--back {
+	 top: 6%;
+	 left: 34%;
+	 fill: #cee4e7;
+	 animation: 8s linear infinite cloudBack;
+}
+
+ @keyframes takeOff {
+	 0% {
+		 transform: translate(-220%, 110%);
+	}
+	 100% {
+		 transform: translate(0, 0);
+	}
+}
+ @keyframes takeOffShadow {
+	 0% {
+		 transform: translate(-440%, 110%);
+		 opacity: 1;
+	}
+	 100% {
+		 transform: translate(0, 0);
+		 opacity: 0.8;
+	}
+}
+ @keyframes flight {
+	 0% {
+		 transform: translate(0, 0)  ;
+		 
+	}
+	 25% {
+		 transform: translate(0, 5%)  ;
+	}
+	50% {
+		 transform: translate(0, 10%) ;
+	}
+	 75% {
+		 transform: translate(0%, 5%) ;
+	}
+	 100% {
+		 transform: translate(0, 0)  ;
+	}
+}
+
+ @keyframes flightShadow {
+	 0% {
+		 transform: scale(0.8);
+		 opacity: 0.8;
+	}
+	 25% {
+		 transform: scale(0.9);
+		 opacity: 1;
+	}
+	 75% {
+		 transform: scale(1.1);
+		 opacity: 0.6;
+	}
+	 100% {
+		 transform: scale(0.8);
+		 opacity: 0.8;
+	}
+}
+ @keyframes cloudFront {
+	 0% {
+		 transform: translate(820%, 0);
+	}
+	 100% {
+		 transform: translate(-600%, 0);
+	}
+}
+ @keyframes cloudMiddle {
+	 0% {
+		 transform: translate(820%, 0);
+	}
+	 100% {
+		 transform: translate(-900%, 0);
+	}
+}
+ @keyframes cloudBack {
+	 0% {
+		 transform: translate(910%, 0);
+	}
+	 100% {
+		 transform: translate(-1000%, 0);
+	}
+}
+ @keyframes skyDay {
+	 0% {
+		 background-color: #fff;
+	}
+	 20% {
+		 background-color: #fff;
+	}
+	 35% {
+		 background-color: #ffc8bd;
+	}
+	 50% {
+		 background-color: transparent;
+	}
+	 70% {
+		 background-color: transparent;
+	}
+	 85% {
+		 background-color: #ffc8bd;
+	}
+	 100% {
+		 background-color: #fff;
+	}
+}
+.sun {
+	 width: 10rem;
+	 height: 10rem;
+	 position: absolute;
+	 right: -200px;
+	 top: 200px;
+  border-radius:50%;
+  background:orange;
+  box-shadow: 0 0 10px orange,
+                0 0 60px orange,
+                0 0 200px yellow,
+                inset 0 0 80px yellow;
+
+  animation: 24s linear infinite rise;
+}
+
+
+ @keyframes rise {
+	0% {
+		 top: 200px;
+	}
+	
+	25% {
+		top: 150px;
+		 right: calc(50% - 100px);
+	}
+	 50% {
+		 top: 200px;
+		 right: calc(100% + 100px);;
+	}
+	
+	75% {
+		top: 800px;
+		 right: calc(100% + 100px);
+	}
+	 80% {
+	 top: 800px;
+		 right: calc(100% + 100px);
+	 }
+	 90% {
+		top: 800px;
+		 right: -200px;
+	 }
+	
+	
+	 100% {
+		 top: 200px;
+		 
+	}
+ }
+ @keyframes rotate {
+	 100% {
+		 transform: rotate(360deg);
+	}
+}
+ @keyframes scale {
+	 0% {
+		 transform: scale(1);
+	}
+	 20% {
+		 transform: scale(1.2);
+	}
+	 40% {
+		 transform: scale(0.8);
+	}
+	 60% {
+		 transform: scale(1.1);
+	}
+	 70% {
+		 transform: scale(0.9);
+	}
+	 100% {
+		 transform: scale(1);
+	}
+}
+
+
+
+
+body {
+  background: radial-gradient(#f1f1f1 0%, #1a2238 50%);
+  background: #1a2238;
+  height: 100vh;
+}
+
+
+.moon {
+   position: absolute;
+	 animation: 24s linear infinite rise;
+	 right: -200px;
+	 top: 200px;
+	 animation-delay: 12s;
+	 background: #f6edbd;
+	 box-shadow: 0 0 5rem 0.75rem #f6edbd, 0 0 3rem 0.75rem #ece1a8 inset;
+	 border-radius: 50%;
+	 height: 10rem;
+	 width: 10rem;
+}
+
+.crater--0 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--1 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--2 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--3 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--4 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--5 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--6 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--7 {
+  position: absolute;
+  background: #ece1a8;
+}
+
+.crater--0 {
+  top: 1.2rem;
+  left: 1.4rem;
+  border-radius: 42%;
+  transform: rotate(-30deg);
+  height: 1.1rem;
+  width: 3rem;
+}
+.crater--1 {
+  top: 1.6rem;
+  left: 1.4rem;
+  background: #F6EDBD;
+  border-radius: 42%;
+  box-shadow: inset -2px 4px 4px 0px #ece1a8;
+  transform: rotate(-40deg);
+  height: 1.1rem;
+  width: 3.7rem;
+}
+.crater--2 {
+  top: 2rem;
+  left: 3.2rem;
+  border-radius: 48%;
+  box-shadow: 0 2px 4px 0px #ece1a8;
+  height: 1.9rem;
+  width: 2.1rem;
+}
+.crater--3 {
+  top: 1rem;
+  left: 4.3rem;
+  border-radius: 48%;
+  box-shadow: 0 -2px 4px 0px #ece1a8;
+  height: 1.6rem;
+  width: 2.4rem;
+}
+.crater--4 {
+  top: 5rem;
+  left: 0.8rem;
+  border-radius: 48%;
+  height: 3.6rem;
+  width: 5.1rem;
+}
+.crater--5 {
+  top: 5rem;
+  left: 0.7rem;
+  background: #F6EDBD;
+  box-shadow: inset 0 -5px 8px 0px #ece1a8;
+  border-radius: 38%;
+  transform: rotate(15deg);
+  height: 3rem;
+  width: 6.4rem;
+}
+.crater--6 {
+  top: 4rem;
+  left: 1rem;
+  background: #F6EDBD;
+  border-radius: 42%;
+  height: 3rem;
+  width: 3rem;
+}
+.crater--7 {
+  top: 4rem;
+  left: 1rem;
+  border-radius: 42%;
+  box-shadow: 4px 3px 6px 3px #ece1a8;
+  height: 3rem;
+  width: 3.2rem;
+}
+
+@keyframes rotation {
+  0% {
+    transform: translate(-500%, 100%);
+  }
+  100% {
+    transform: translate(500%, -100%);
+  }
+}
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  height: 1px;
+  width: 2px;
+}
+
+.star--0 {
+  top: 30.0137049262%;
+  left: 78.1375972414%;
+  animation: 5s shining 2.1s infinite;
+}
+
+.star--1 {
+  top: 62.8128117277%;
+  left: 5.7028099551%;
+  animation: 5s shining 0.7s infinite;
+}
+
+.star--2 {
+  top: 15.8592796836%;
+  left: 11.4899674525%;
+  animation: 3s shining 2.5s infinite;
+}
+
+.star--3 {
+  top: 50.4825113067%;
+  left: 45.179578497%;
+  animation: 5s shining 4.6s infinite;
+}
+
+.star--4 {
+  top: 68.0533632466%;
+  left: 54.880178331%;
+  animation: 1s shining 4s infinite;
+}
+
+.star--5 {
+  top: 47.6833114414%;
+  left: 14.8667058722%;
+  animation: 3s shining 3.7s infinite;
+}
+
+.star--6 {
+  top: 23.9482709798%;
+  left: 5.8351393505%;
+  animation: 2s shining 4.3s infinite;
+}
+
+.star--7 {
+  top: 69.7725188604%;
+  left: 48.5179737399%;
+  animation: 1s shining 3.8s infinite;
+}
+
+.star--8 {
+  top: 55.3645232372%;
+  left: 7.2437075659%;
+  animation: 2s shining 2.2s infinite;
+}
+
+.star--9 {
+  top: 52.883412496%;
+  left: 34.7551537825%;
+  animation: 2s shining 3.9s infinite;
+}
+
+.star--10 {
+  top: 76.3067115647%;
+  left: 17.9969917425%;
+  animation: 4s shining 4.7s infinite;
+}
+
+.star--11 {
+  top: 90.4274306413%;
+  left: 3.7018317211%;
+  animation: 1s shining 4.6s infinite;
+}
+
+.star--12 {
+  top: 10.4391063371%;
+  left: 54.709681521%;
+  animation: 1s shining 4.4s infinite;
+}
+
+.star--13 {
+  top: 78.8718765814%;
+  left: 66.7279718321%;
+  animation: 3s shining 0.6s infinite;
+}
+
+.star--14 {
+  top: 95.0853149192%;
+  left: 30.1527730823%;
+  animation: 1s shining 2.4s infinite;
+}
+
+.star--15 {
+  top: 34.9857222995%;
+  left: 74.4167909197%;
+  animation: 4s shining 3.3s infinite;
+}
+
+.star--16 {
+  top: 23.2850563657%;
+  left: 97.0927935948%;
+  animation: 4s shining 1s infinite;
+}
+
+.star--17 {
+  top: 4.5853396004%;
+  left: 42.1237545442%;
+  animation: 2s shining 4.8s infinite;
+}
+
+.star--18 {
+  top: 44.9101592594%;
+  left: 58.5246022515%;
+  animation: 2s shining 2.9s infinite;
+}
+
+.star--19 {
+  top: 20.2322365809%;
+  left: 39.8511464888%;
+  animation: 4s shining 0.3s infinite;
+}
+
+.star--20 {
+  top: 43.7576762469%;
+  left: 11.024227722%;
+  animation: 5s shining 3.1s infinite;
+}
+
+.star--21 {
+  top: 41.9010877627%;
+  left: 71.7590774026%;
+  animation: 2s shining 3.1s infinite;
+}
+
+.star--22 {
+  top: 86.4896618197%;
+  left: 94.176173742%;
+  animation: 4s shining 4.2s infinite;
+}
+
+.star--23 {
+  top: 25.4650415627%;
+  left: 85.5045932063%;
+  animation: 2s shining 0.7s infinite;
+}
+
+.star--24 {
+  top: 47.9168711173%;
+  left: 59.7041138737%;
+  animation: 1s shining 4.7s infinite;
+}
+
+.star--25 {
+  top: 93.5613629318%;
+  left: 30.6974721199%;
+  animation: 4s shining 2.2s infinite;
+}
+
+.star--26 {
+  top: 47.8022347659%;
+  left: 93.9001479794%;
+  animation: 5s shining 1.5s infinite;
+}
+
+.star--27 {
+  top: 24.8075583513%;
+  left: 37.3289032043%;
+  animation: 2s shining 2.9s infinite;
+}
+
+.star--28 {
+  top: 81.6048332801%;
+  left: 46.0957902665%;
+  animation: 1s shining 4.8s infinite;
+}
+
+.star--29 {
+  top: 38.802467683%;
+  left: 91.9798807311%;
+  animation: 4s shining 1.2s infinite;
+}
+
+.star--30 {
+  top: 46.2007689889%;
+  left: 11.4368692929%;
+  animation: 3s shining 4.5s infinite;
+}
+
+.star--31 {
+  top: 45.3748589314%;
+  left: 73.7957677201%;
+  animation: 2s shining 1.4s infinite;
+}
+
+.star--32 {
+  top: 96.6656844204%;
+  left: 62.3412219938%;
+  animation: 5s shining 3.4s infinite;
+}
+
+.star--33 {
+  top: 76.8945383586%;
+  left: 68.8300190171%;
+  animation: 3s shining 2.9s infinite;
+}
+
+.star--34 {
+  top: 24.8838133232%;
+  left: 14.1612187609%;
+  animation: 1s shining 3.4s infinite;
+}
+
+.star--35 {
+  top: 90.6004896414%;
+  left: 68.5666447991%;
+  animation: 5s shining 2.2s infinite;
+}
+
+.star--36 {
+  top: 67.4044296892%;
+  left: 7.5963585719%;
+  animation: 2s shining 0.8s infinite;
+}
+
+.star--37 {
+  top: 60.839092856%;
+  left: 80.5881145112%;
+  animation: 1s shining 0.3s infinite;
+}
+
+.star--38 {
+  top: 13.3899641841%;
+  left: 92.6537087735%;
+  animation: 5s shining 1.4s infinite;
+}
+
+.star--39 {
+  top: 68.4191733713%;
+  left: 25.9593407289%;
+  animation: 1s shining 4.6s infinite;
+}
+
+.star--40 {
+  top: 91.9318561347%;
+  left: 51.7089786181%;
+  animation: 1s shining 4.5s infinite;
+}
+
+.star--41 {
+  top: 17.5579931%;
+  left: 71.0788985903%;
+  animation: 3s shining 4s infinite;
+}
+
+.star--42 {
+  top: 53.7742595178%;
+  left: 13.2380545156%;
+  animation: 1s shining 0.9s infinite;
+}
+
+.star--43 {
+  top: 81.9606097149%;
+  left: 10.7977864676%;
+  animation: 3s shining 2.4s infinite;
+}
+
+.star--44 {
+  top: 57.8746268061%;
+  left: 12.2777214545%;
+  animation: 2s shining 1.9s infinite;
+}
+
+.star--45 {
+  top: 83.7334788239%;
+  left: 88.405381136%;
+  animation: 1s shining 1.6s infinite;
+}
+
+.star--46 {
+  top: 41.4850268868%;
+  left: 83.0327584061%;
+  animation: 4s shining 0.8s infinite;
+}
+
+.star--47 {
+  top: 76.4493614735%;
+  left: 44.3503810627%;
+  animation: 5s shining 2.4s infinite;
+}
+
+.star--48 {
+  top: 86.9378125244%;
+  left: 11.9881654414%;
+  animation: 3s shining 1.4s infinite;
+}
+
+.star--49 {
+  top: 35.8347783817%;
+  left: 65.969858813%;
+  animation: 1s shining 4.1s infinite;
+}
+
+.star--50 {
+  top: 72.5749007345%;
+  left: 20.3625412367%;
+  animation: 1s shining 1.5s infinite;
+}
+
+.star--51 {
+  top: 47.4671111534%;
+  left: 32.840398634%;
+  animation: 2s shining 4.5s infinite;
+}
+
+.star--52 {
+  top: 40.4253724071%;
+  left: 93.0436430865%;
+  animation: 2s shining 0.6s infinite;
+}
+
+.star--53 {
+  top: 18.7688107888%;
+  left: 33.6790732505%;
+  animation: 5s shining 3.4s infinite;
+}
+
+.star--54 {
+  top: 67.9912777305%;
+  left: 6.1095429326%;
+  animation: 5s shining 4.1s infinite;
+}
+
+.star--55 {
+  top: 82.0286186919%;
+  left: 89.0262700803%;
+  animation: 2s shining 1.8s infinite;
+}
+
+.star--56 {
+  top: 0.6520315333%;
+  left: 22.3681969089%;
+  animation: 3s shining 3.7s infinite;
+}
+
+.star--57 {
+  top: 21.1007273129%;
+  left: 19.3124974524%;
+  animation: 2s shining 0.3s infinite;
+}
+
+.star--58 {
+  top: 19.2834531728%;
+  left: 60.6381588642%;
+  animation: 3s shining 3s infinite;
+}
+
+.star--59 {
+  top: 52.1311179862%;
+  left: 87.5135851528%;
+  animation: 4s shining 1.1s infinite;
+}
+
+.star--60 {
+  top: 44.6761426098%;
+  left: 20.3805216569%;
+  animation: 1s shining 0.7s infinite;
+}
+
+.star--61 {
+  top: 83.1421140694%;
+  left: 81.8042392971%;
+  animation: 1s shining 1s infinite;
+}
+
+.star--62 {
+  top: 70.4721735686%;
+  left: 90.4581225466%;
+  animation: 3s shining 2.8s infinite;
+}
+
+.star--63 {
+  top: 72.3406834119%;
+  left: 39.6891881927%;
+  animation: 5s shining 4.1s infinite;
+}
+
+.star--64 {
+  top: 85.6264559345%;
+  left: 98.3397931833%;
+  animation: 1s shining 3.1s infinite;
+}
+
+.star--65 {
+  top: 16.4990198392%;
+  left: 22.0942454349%;
+  animation: 1s shining 0.4s infinite;
+}
+
+.star--66 {
+  top: 68.3849777883%;
+  left: 56.3607763358%;
+  animation: 4s shining 4.6s infinite;
+}
+
+.star--67 {
+  top: 78.3574045624%;
+  left: 18.7105158939%;
+  animation: 2s shining 0.8s infinite;
+}
+
+.star--68 {
+  top: 27.2105609791%;
+  left: 86.9495341401%;
+  animation: 1s shining 3.1s infinite;
+}
+
+.star--69 {
+  top: 30.7231500488%;
+  left: 20.9442149444%;
+  animation: 5s shining 2.6s infinite;
+}
+
+.star--70 {
+  top: 64.4139495003%;
+  left: 13.6049085728%;
+  animation: 3s shining 2.3s infinite;
+}
+
+.star--71 {
+  top: 59.1268966685%;
+  left: 43.2124540444%;
+  animation: 5s shining 0.9s infinite;
+}
+
+.star--72 {
+  top: 87.7784408095%;
+  left: 56.2287575467%;
+  animation: 3s shining 3.4s infinite;
+}
+
+.star--73 {
+  top: 33.9172432301%;
+  left: 59.5814530168%;
+  animation: 1s shining 1s infinite;
+}
+
+.star--74 {
+  top: 59.2972978373%;
+  left: 98.7566951588%;
+  animation: 4s shining 3.2s infinite;
+}
+
+.star--75 {
+  top: 94.3212946184%;
+  left: 49.7890907369%;
+  animation: 5s shining 3.2s infinite;
+}
+
+.star--76 {
+  top: 25.2096250604%;
+  left: 50.7011783595%;
+  animation: 4s shining 1.5s infinite;
+}
+
+.star--77 {
+  top: 79.8764850728%;
+  left: 72.3675114002%;
+  animation: 3s shining 1.8s infinite;
+}
+
+.star--78 {
+  top: 82.2297787663%;
+  left: 59.5233504937%;
+  animation: 5s shining 3.5s infinite;
+}
+
+.star--79 {
+  top: 81.0184507893%;
+  left: 84.6653325392%;
+  animation: 4s shining 1.2s infinite;
+}
+
+.star--80 {
+  top: 20.0636920376%;
+  left: 95.6692658149%;
+  animation: 1s shining 1.3s infinite;
+}
+
+.star--81 {
+  top: 96.9657272576%;
+  left: 31.8911019818%;
+  animation: 2s shining 2.2s infinite;
+}
+
+.star--82 {
+  top: 42.2277758927%;
+  left: 0.6860531622%;
+  animation: 3s shining 0.1s infinite;
+}
+
+.star--83 {
+  top: 81.5716200124%;
+  left: 23.7030468546%;
+  animation: 2s shining 2.2s infinite;
+}
+
+.star--84 {
+  top: 53.2159029757%;
+  left: 1.3650321349%;
+  animation: 4s shining 1.8s infinite;
+}
+
+.star--85 {
+  top: 39.5534822205%;
+  left: 7.6280685827%;
+  animation: 4s shining 4.1s infinite;
+}
+
+.star--86 {
+  top: 50.9558330926%;
+  left: 69.3088323438%;
+  animation: 1s shining 0.8s infinite;
+}
+
+.star--87 {
+  top: 63.0245131854%;
+  left: 40.7837926327%;
+  animation: 2s shining 2.3s infinite;
+}
+
+.star--88 {
+  top: 21.9508010468%;
+  left: 52.7042578729%;
+  animation: 2s shining 3.3s infinite;
+}
+
+.star--89 {
+  top: 7.2373232519%;
+  left: 91.9483189734%;
+  animation: 5s shining 4.2s infinite;
+}
+
+.star--90 {
+  top: 98.7589350427%;
+  left: 97.7176442658%;
+  animation: 3s shining 1s infinite;
+}
+
+.star--91 {
+  top: 1.8634963701%;
+  left: 7.6710546431%;
+  animation: 5s shining 0.1s infinite;
+}
+
+.star--92 {
+  top: 70.2707273375%;
+  left: 58.4536064575%;
+  animation: 2s shining 5s infinite;
+}
+
+.star--93 {
+  top: 53.7523016256%;
+  left: 4.7138988013%;
+  animation: 2s shining 2.7s infinite;
+}
+
+.star--94 {
+  top: 78.1913313246%;
+  left: 19.8635800953%;
+  animation: 4s shining 3.7s infinite;
+}
+
+.star--95 {
+  top: 51.179422071%;
+  left: 80.8930716728%;
+  animation: 2s shining 1.9s infinite;
+}
+
+.star--96 {
+  top: 30.1993872041%;
+  left: 73.620664865%;
+  animation: 4s shining 3s infinite;
+}
+
+.star--97 {
+  top: 53.2283464525%;
+  left: 70.4268849054%;
+  animation: 1s shining 4.9s infinite;
+}
+
+.star--98 {
+  top: 60.2189054934%;
+  left: 76.259486142%;
+  animation: 4s shining 2s infinite;
+}
+
+.star--99 {
+  top: 3.7597553751%;
+  left: 59.635538983%;
+  animation: 1s shining 1.4s infinite;
+}
+
+.star--100 {
+  top: 57.1090426969%;
+  left: 74.0957559637%;
+  animation: 2s shining 2.8s infinite;
+}
+
+@keyframes shining {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.flight-window {
+	animation: 1s linear infinite shiningFlight;
+}
+@keyframes shiningFlight {
+  0% {
+    filter: drop-shadow(0 0 2px #f12);
+  }
+  50% {
+	filter: drop-shadow(0 0 4px #f12);
+    fill: #f12;
+  }
+  100% {
+    filter: drop-shadow(0 0 2px #f12);
+  }
+}
+
+.superman{
+  position:absolute;
+  width: 100px;
+  top: calc(80% - (62px/2));
+ left: calc(45% - (272px/2));
+ transition: all;
+ z-index: 2;
+ filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
+
+ animation: 2s ease-in-out takeOff, 3s ease-in-out infinite alternate flight 2s;
+}
+
+
+
+
+ 
+
+</style>
+</head>
+<body>
+<div class="container">
+<div class="animation">
+  <svg id="master-artboard" class="animation__cloud--back" viewBox="0 0 45 18" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45px" height="18px"><path d="M 58.88372802734375 825.155517578125 C 16.61685562133789 826.1433715820312 57.925209045410156 781.6769409179688 58.883731842041016 781.3507080078125 C 106.25779724121094 731.152099609375 169.17739868164062 692.9862670898438 226.64694213867188 694.6730346679688 C 227.2968292236328 557.091552734375 389.74322509765625 563.0558471679688 425.166748046875 635.9559326171875 C 534.7359619140625 431.2034912109375 793.6226196289062 599.6361694335938 715.956298828125 741.27392578125 C 820.5570068359375 803.94287109375 789.773193359375 826.9736328125 767.21728515625 825.1555786132812 C 394.85125732421875 825.5911865234375 359.5561218261719 823.805908203125 58.88372802734375 825.155517578125 Z" transform="matrix(0.0573558509349823, 0, 0, 0.056244850158691406, -1.3596858978271484, -29.666284561157227)"/></svg>
+<svg id="master-artboard" class="animation__cloud--middle" viewBox="0 0 45 18" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45px" height="18px"><path d="M 58.88372802734375 825.155517578125 C 16.61685562133789 826.1433715820312 57.925209045410156 781.6769409179688 58.883731842041016 781.3507080078125 C 106.25779724121094 731.152099609375 169.17739868164062 692.9862670898438 226.64694213867188 694.6730346679688 C 227.2968292236328 557.091552734375 389.74322509765625 563.0558471679688 425.166748046875 635.9559326171875 C 534.7359619140625 431.2034912109375 793.6226196289062 599.6361694335938 715.956298828125 741.27392578125 C 820.5570068359375 803.94287109375 789.773193359375 826.9736328125 767.21728515625 825.1555786132812 C 394.85125732421875 825.5911865234375 359.5561218261719 823.805908203125 58.88372802734375 825.155517578125 Z" transform="matrix(0.0573558509349823, 0, 0, 0.056244850158691406, -1.3596858978271484, -29.666284561157227)"/></svg>
+<div class="animation__plane--shadow"></div>
+<svg class="animation__plane" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" data-name="svgi-plane" viewBox="0 0 135.67 49.55"><path fill="#fff" stroke="#464646" stroke-linejoin="round" d="M74.663 45.572h-9.106z" class="svgi-plane--stripe3"/><path fill="#fff" stroke="#464646" stroke-linejoin="round" stroke-width="1" d="M.75 26.719h23.309z" class="svgi-plane--stripe1"/><path fill="#fff" stroke="#464646" stroke-linejoin="round" stroke-width="1" d="M11.23 31.82h22.654z" class="svgi-plane--stripe2"/><path fill="#fff" stroke="#464646" stroke-linejoin="round" stroke-width="1" d="m 53.47597,24.263013 h 68.97869 c 6.17785,0 12.47074,6.758518 12.40872,8.67006 -0.05,1.537903 -5.43763,7.036166 -11.72452,7.056809 l -59.599872,0.201269 c -9.092727,0.03097 -23.597077,-5.992662 -22.178652,-11.794378 1.160348,-4.74789 7.862358,-4.13376 12.115634,-4.13376 z"/><path fill="#fff" stroke="#464646" stroke-linejoin="round" stroke-width="1" d="M 45.243501,24.351777 37.946312,0.952937 h 7.185155 c 15.37061,20.184725 28.402518,23.28324 28.402518,23.28324 0,0 -27.106129,-0.178562 -28.290484,0.1156 z"/><path fill="#fff" stroke="#464646" stroke-linejoin="round" stroke-width="1" d="m 42.699738,18.984597 h 10.627187 c 5.753726,0 5.364609,7.799958 0,7.799958 H 42.998828 c -4.96749,0 -5.574672,-7.799958 -0.29909,-7.799958 z m 33.139939,16.164502 h 29.656893 c 6.62199,0 6.49395,6.577892 0,6.577892 H 75.940707 c -8.658596,0 -8.499549,-6.35598 -0.10103,-6.577892 z m 9.693907,6.664592 h 8.86866 c 4.439332,0 4.309293,7.066099 0,7.066099 h -8.756626 z"/><path fill="#fff" stroke="#464646" stroke-linejoin="round" stroke-width="1" d="m 85.55159,42.447431 c 0,0 -5.282585,0.456211 -6.372912,3.263659 1.335401,2.378073 6.397919,2.528767 6.397919,2.528767 z"/><path class="flight-window" fill="#fff" stroke="#464646" stroke-linejoin="round" stroke-width="1" d="m 133.68903,31.07417 h -7.01411 c -1.26938,0 -2.89286,-1.005314 -3.21496,-3.216179 h 7.50225 z"/><ellipse cx="113.564" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="107.56219" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="101.56039" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="95.558594" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="89.556793" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="83.554993" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="77.553192" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="71.551392" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/><ellipse cx="65.549591" cy="29.448534" fill="#fff" stroke="#464646" stroke-linecap="square" stroke-linejoin="round" stroke-width="1" rx="1.3354006" ry="1.6400863"/></svg>
+<svg id="master-artboard" class="animation__cloud--front" viewBox="0 0 45 18" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45px" height="18px"><path d="M 58.88372802734375 825.155517578125 C 16.61685562133789 826.1433715820312 57.925209045410156 781.6769409179688 58.883731842041016 781.3507080078125 C 106.25779724121094 731.152099609375 169.17739868164062 692.9862670898438 226.64694213867188 694.6730346679688 C 227.2968292236328 557.091552734375 389.74322509765625 563.0558471679688 425.166748046875 635.9559326171875 C 534.7359619140625 431.2034912109375 793.6226196289062 599.6361694335938 715.956298828125 741.27392578125 C 820.5570068359375 803.94287109375 789.773193359375 826.9736328125 767.21728515625 825.1555786132812 C 394.85125732421875 825.5911865234375 359.5561218261719 823.805908203125 58.88372802734375 825.155517578125 Z" transform="matrix(0.0573558509349823, 0, 0, 0.056244850158691406, -1.3596858978271484, -29.666284561157227)"/></svg>
+		<div class="sun"></div>
+		<section class="sky">
+    <div class="star star--0"></div>
+    <div class="star star--1"></div>
+    <div class="star star--2"></div>
+    <div class="star star--3"></div>
+    <div class="star star--4"></div>
+    <div class="star star--5"></div>
+    <div class="star star--6"></div>
+    <div class="star star--7"></div>
+    <div class="star star--8"></div>
+    <div class="star star--9"></div>
+    <div class="star star--10"></div>
+    <div class="star star--11"></div>
+    <div class="star star--12"></div>
+    <div class="star star--13"></div>
+    <div class="star star--14"></div>
+    <div class="star star--15"></div>
+    <div class="star star--16"></div>
+    <div class="star star--17"></div>
+    <div class="star star--18"></div>
+    <div class="star star--19"></div>
+    <div class="star star--20"></div>
+    <div class="star star--21"></div>
+    <div class="star star--22"></div>
+    <div class="star star--23"></div>
+    <div class="star star--24"></div>
+    <div class="star star--25"></div>
+    <div class="star star--26"></div>
+    <div class="star star--27"></div>
+    <div class="star star--28"></div>
+    <div class="star star--29"></div>
+    <div class="star star--30"></div>
+    <div class="star star--31"></div>
+    <div class="star star--32"></div>
+    <div class="star star--33"></div>
+    <div class="star star--34"></div>
+    <div class="star star--35"></div>
+    <div class="star star--36"></div>
+    <div class="star star--37"></div>
+    <div class="star star--38"></div>
+    <div class="star star--39"></div>
+    <div class="star star--40"></div>
+    <div class="star star--41"></div>
+    <div class="star star--42"></div>
+    <div class="star star--43"></div>
+    <div class="star star--44"></div>
+    <div class="star star--45"></div>
+    <div class="star star--46"></div>
+    <div class="star star--47"></div>
+    <div class="star star--48"></div>
+    <div class="star star--49"></div>
+    <div class="star star--50"></div>
+    <div class="star star--51"></div>
+    <div class="star star--52"></div>
+    <div class="star star--53"></div>
+    <div class="star star--54"></div>
+    <div class="star star--55"></div>
+    <div class="star star--56"></div>
+    <div class="star star--57"></div>
+    <div class="star star--58"></div>
+    <div class="star star--59"></div>
+    <div class="star star--60"></div>
+    <div class="star star--61"></div>
+    <div class="star star--62"></div>
+    <div class="star star--63"></div>
+    <div class="star star--64"></div>
+    <div class="star star--65"></div>
+    <div class="star star--66"></div>
+    <div class="star star--67"></div>
+    <div class="star star--68"></div>
+    <div class="star star--69"></div>
+    <div class="star star--70"></div>
+    <div class="star star--71"></div>
+    <div class="star star--72"></div>
+    <div class="star star--73"></div>
+    <div class="star star--74"></div>
+    <div class="star star--75"></div>
+    <div class="star star--76"></div>
+    <div class="star star--77"></div>
+    <div class="star star--78"></div>
+    <div class="star star--79"></div>
+    <div class="star star--80"></div>
+    <div class="star star--81"></div>
+    <div class="star star--82"></div>
+    <div class="star star--83"></div>
+    <div class="star star--84"></div>
+    <div class="star star--85"></div>
+    <div class="star star--86"></div>
+    <div class="star star--87"></div>
+    <div class="star star--88"></div>
+    <div class="star star--89"></div>
+    <div class="star star--90"></div>
+    <div class="star star--91"></div>
+    <div class="star star--92"></div>
+    <div class="star star--93"></div>
+    <div class="star star--94"></div>
+    <div class="star star--95"></div>
+    <div class="star star--96"></div>
+    <div class="star star--97"></div>
+    <div class="star star--98"></div>
+    <div class="star star--99"></div>
+  </section>
+  <section class="moon">
+    <div class="crater--0"></div>
+    <div class="crater--1"></div>
+    <div class="crater--2"></div>
+    <div class="crater--3"></div>
+    <div class="crater--4"></div>
+    <div class="crater--5"></div>
+    <div class="crater--6"></div>
+    <div class="crater--7"></div>
+  </section>
+    <img class="superman" src="https://i.ibb.co/7jTf81q/superman.png" alt="" />
+ </div>
+  <div class="c">
+    <div id="timer" class="linear-wipe"></div>
+  </div>
+
+
+
+</div>
+
+
+<script>
+function updateTimer() {
+  future  = Date.parse("August 11, 2023 17:00:00");
+  now     = new Date();
+  diff    = future - now;
+
+  days  = Math.floor( diff / (1000*60*60*24) );
+  hours = Math.floor( diff / (1000*60*60) );
+  mins  = Math.floor( diff / (1000*60) );
+  secs  = Math.floor( diff / 1000 );
+
+  d = days;
+  h = hours - days  * 24;
+  m = mins  - hours * 60;
+  s = secs  - mins  * 60;
+
+  document.getElementById("timer")
+    .innerHTML =
+      '<div>' + d + '<span>days</span></div>' +
+      '<div>' + h + '<span>hours</span></div>' +
+      '<div>' + m + '<span>minutes</span></div>' +
+      '<div>' + s + '<span>seconds</span></div>' ;
+}
+setInterval('updateTimer()', 1000 );
+
+</script>
+
+</body>
+</html>
